@@ -1,0 +1,4 @@
+Why is 10 / 2 equal to 5.0 and not 5, and which operator gives you 5? 10// 2
+What is int(9.99), and what is round(9.99)? Why are they different? int cuts off decimals round rounds it up
+A user types 20 at an input() prompt. What do you have to do before you can subtract it from 100, and what error do you get if you forget? put an int() before input and you will get a TypeError
+Without running it: what is 2 + 3 * 4 ** 2? 50

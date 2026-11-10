@@ -1,0 +1,1 @@
+print('Name:\t Arturs\nField:\t Robotics\nYear:\t 2026')

@@ -1,0 +1,66 @@
+# Comparisons - each is a question with  a True/false answer
+5==5    # True equal to
+5!=3    # True not equal to
+5>3     # True
+5<3     # False
+5>=5    # True
+5<=4    # False
+
+# One decision, several outcomes. The FIRST true branch wins
+# and the rest are skipped entirely.
+score = 84
+if score>=90: 
+   grade:"A"
+elif score>=80:
+   grade="B"
+elif score>= 70:
+   grade="C"
+else:
+   grade="F"
+
+# Combining conditions
+power_on = True
+temperature = 45
+if power_on and temperature < 60:   # BOTH must be true
+   print("RUN")
+
+if power_on or temperature < 60:    # EITHER one is enough
+   print("maybe")
+
+if not power_on:                    # flips True and False
+   print("switched off)"
+
+# Python lets you chain a range, and it reads how you'd say it
+if <= score <= 100:
+print("valid")
+
+# Short form for picking between two values 
+age = 18
+label "adult" if age >= 18 else "minor"
+
+# Truthiness: some values count as False without being False
+bool(0)      # False
+bool(1)      # True
+bool("")     # False empty string
+bool("0")    # True a non empty string, even one holding "0"
+bool([])     # False empty list
+bool(" ")    # True   a space is a character
+
+
+
+When something breaks, here’s what the message means
+
+SyntaxError: expected ‘:’ — missing colon at the end. Every if, elif and else line ends in a colon.
+
+SyntaxError: invalid syntax. Maybe you meant ‘==’ or ‘:=’ instead of ‘=’? — you wrote = where you meant ==. Python tells you outright, so read the whole message.
+
+IndentationError: expected an indented block after ‘if’ statement on line N — the line after if ...: has to be indented.
+
+TypeError: ‘>’ not supported between instances of ‘str’ and ‘int’ — you compared an input() result to a number without int(). Yesterday’s bug wearing a hat.
+
+NameError on a variable you think you set — it was set inside an if branch that never ran. Give it a starting value before the if.
+
+Every branch seems to run — you used separate ifs where you needed elif.
+
+The right branch never runs — print the value you’re testing just above the if. Nine times out of ten it’s a string when you thought it was a number, or it has a stray space on the end.
+

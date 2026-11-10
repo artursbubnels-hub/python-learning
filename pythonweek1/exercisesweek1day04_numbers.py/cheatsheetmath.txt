@@ -1,0 +1,54 @@
+a,b= 17,5
+a+b          # 22
+a-b          # 12
+a*b          # 85
+a/b          # 3,4 true division, always a decimal
+a//b         # 3 floor division, the whole part only
+a%b          # reminder."modulo"
+a**b         # 1419857 power
+
+# Order of operation **first, then* / // %, then +-
+2+3*4 ** 2   # 50, not 80 and not 400
+((2 +3 * 4)**2 # 400 parentheses win, always
+
+round(2.7182818, 2) # 2.72 rounds
+int(2.7182818) # 2 chops the decimals off
+abs(-14)     # 14
+
+int("42")    # 42 text-> text
+
+
+#THE BUG OF THE DAY
+"7" + "8"    # "78" two strings glued together
+int("7")+ int("8") # 15 what you actually wanted
+
+
+import math
+math.sqrt(144) # 12.0
+math.pi        # 3.141592653589793
+math.floor(7,8) # 7 always down
+math.ceil(7,2) # 8 always up
+
+
+value = 21.5
+
+f"{value:.1f}" # "21.5" one decimal place
+f"{5:02d}"     # "05" pad to two digits with a zero
+
+Those last two f-string tricks are how you make output look deliberate instead of accidental. Use :.2f for money and measurements, :02d for clock digits.77
+
+TypeError: can only concatenate str (not “int”) to str — you added a number to text. Wrap the number in str(), or use an f-string.
+
+TypeError: unsupported operand type(s) for -: ‘str’ and ‘int’ — you forgot int() around an input(). That’s exercise 5’s whole lesson.
+
+ValueError: invalid literal for int() with base 10: ‘abc’ — you called int() on something that isn’t a number. Later in the course you’ll catch this properly; for now, type digits.
+
+NameError: name ‘math’ is not defined — missing import math at the top of the file.
+
+ZeroDivisionError: division by zero — exactly what it says. Nothing divides by zero, in Python or anywhere else.
+
+Your answer is off by one — almost always int() where you wanted round(), or // where you wanted /.
+
+You get 3.4 where you expected 3 — / gives a decimal. You wanted //.
+
+The five-minute rule, same as yesterday: stuck for five minutes, look up exactly one thing and keep going. Stuck for fifteen, write the question in your notes under “Things I still do not understand” and move on.

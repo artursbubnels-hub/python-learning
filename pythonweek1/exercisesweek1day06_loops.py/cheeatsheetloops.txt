@@ -1,0 +1,68 @@
+# for: once per item in a sequence
+for i in range(1, 11):        # 1 2 3 ... 10  - stops before 11
+    print(i)
+
+range(5)                      # 0 1 2 3 4      five numbers from zero
+range(1, 11)                  # 1 .. 10        start, stop
+range(2, 21, 2)               # 2 4 6 .. 20    start, stop, step
+range(10, 0, -1)              # 10 9 8 .. 1    counting down
+
+# while: keep going as long as the condition holds
+count = 5
+while count > 0:
+    print(count)
+    count -= 1                # WITHOUT this line it runs forever
+print("Go!")
+
+# accumulator: initialise before, add inside, use after
+total = 0
+for n in range(1, 101):
+    total += n                # same as  total = total + n
+print(total)                  # 5050
+
+# break and continue
+for n in range(1, 21):
+    if n == 17:
+        break                 # leave the loop completely
+    if n % 3 == 0:
+        continue              # skip the rest of THIS pass, go round again
+    print(n, end=" ")
+print()                       # end=" " keeps output on one line, so you
+                              # need a bare print() to break the line
+
+# repeat until valid - the shape of every interactive program
+while True:
+    answer = input("A number from 1 to 10: ")
+    if answer.isdigit() and 1 <= int(answer) <= 10:
+        break
+    print("Not valid, try again.")
+
+# nested: the inner loop runs completely, once per pass of the outer
+for row in range(1, 6):
+    for _ in range(row):
+        print("*", end="")
+    print()
+
+# two variables updated together, in one line
+a, b = 0, 1
+a, b = b, a + b               # the right side is worked out FIRST
+
+The underscore in for _ in range(row) is a real variable name, used by convention to mean “I need to repeat this, but I don’t care about the number.”
+
+
+
+Output never stops — infinite loop. Press Ctrl+C. Your while condition never becomes false, usually a missing count -= 1.
+
+One number short, or one too many — range stops before its second argument. range(1, 10) ends at 9.
+
+IndentationError: expected an indented block after ‘for’ statement — the loop body has to be indented under the for or while line.
+
+The loop prints only the last value — your print is after the loop instead of inside it. Check the indentation.
+
+Your total equals the last number — total = 0 is inside the loop, resetting every pass. Move it above.
+
+SyntaxError: ‘break’ outside loop — break and continue only work inside a loop.
+
+TypeError: ‘int’ object is not iterable — you wrote for i in 10:. You need for i in range(10):.
+
+Everything prints on one line and runs together — you used end=" " and forgot the bare print() afterwards.
