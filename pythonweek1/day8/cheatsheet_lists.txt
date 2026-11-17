@@ -1,0 +1,125 @@
+# creating a list
+fruits = ["apple", "banana", "orange"]
+numbers = [10, 20, 30, 40, 50]
+empty = []
+
+# accessing items (index starts at 0)
+fruits[0]                    # "apple"   first item
+fruits[1]                    # "banana"  second item
+fruits[-1]                   # "orange"  last item
+fruits[-2]                   # "banana"  second from last
+
+# changing items
+fruits[1] = "mango"          # replace banana with mango
+
+# adding items
+fruits.append("grape")       # add to the END
+fruits.insert(1, "kiwi")     # add at index 1
+fruits.extend(["pear", "plum"])  # add multiple items
+
+# removing items
+fruits.remove("apple")       # remove by VALUE
+fruits.pop()                 # remove LAST item
+fruits.pop(0)                # remove item at index 0
+del fruits[1]                # delete item at index 1
+fruits.clear()               # remove ALL items
+
+# list length
+numbers = [10, 20, 30, 40]
+len(numbers)                 # 4
+
+# checking if an item exists
+"apple" in fruits            # True if apple exists
+"mango" not in fruits        # True if mango doesn't exist
+
+# slicing: get part of a list
+numbers = [10, 20, 30, 40, 50]
+
+numbers[0:3]                 # [10, 20, 30]  index 0 to 2
+numbers[1:4]                 # [20, 30, 40]
+numbers[:3]                  # first 3 items
+numbers[2:]                  # from index 2 to the end
+numbers[:]                   # copy the whole list
+numbers[::-1]                # reversed list
+
+# looping through a list
+for fruit in fruits:
+    print(fruit)             # print each item
+
+# looping using indexes
+for i in range(len(fruits)):
+    print(i, fruits[i])      # index and value
+
+# enumerate: get index AND value
+for index, fruit in enumerate(fruits):
+    print(index, fruit)
+
+# sorting
+numbers = [5, 2, 8, 1, 9]
+
+numbers.sort()               # sort original list: ascending
+numbers.sort(reverse=True)   # descending
+sorted(numbers)              # returns a NEW sorted list
+
+# reversing
+numbers.reverse()            # reverse original list
+numbers[::-1]                # returns reversed copy
+
+# useful functions
+numbers = [5, 2, 8, 1, 9]
+
+min(numbers)                 # 1   smallest
+max(numbers)                 # 9   largest
+sum(numbers)                 # 25  total
+len(numbers)                 # 5   number of items
+
+# counting and finding
+numbers.count(5)              # how many times 5 appears
+numbers.index(8)              # index of first 8
+
+# copying lists
+a = [1, 2, 3]
+b = a.copy()                 # independent copy
+
+# IMPORTANT: assignment does NOT copy
+b = a                         # both variables reference same list
+
+# combining lists
+a = [1, 2]
+b = [3, 4]
+c = a + b                     # [1, 2, 3, 4]
+
+# multiplying lists
+zeros = [0] * 5              # [0, 0, 0, 0, 0]
+
+# list comprehension: create a list using a loop
+squares = [x**2 for x in range(1, 6)]
+# [1, 4, 9, 16, 25]
+
+# list comprehension with a condition
+evens = [x for x in range(1, 11) if x % 2 == 0]
+# [2, 4, 6, 8, 10]
+
+# nested lists (lists inside lists)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matrix[0]                    # [1, 2, 3]
+matrix[1][2]                 # 6
+matrix[2][0]                 # 7
+
+# unpacking: assign items to variables
+person = ["Artur", 18, "Python"]
+name, age, language = person
+
+# checking if a list is empty
+if not fruits:
+    print("List is empty")
+
+# modifying while looping
+numbers = [1, 2, 3, 4, 5]
+numbers = [n for n in numbers if n != 3]
+# [1, 2, 4, 5]
