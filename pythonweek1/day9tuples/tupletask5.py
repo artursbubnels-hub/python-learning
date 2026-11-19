@@ -1,0 +1,6 @@
+numbers = (10, 20, 30, 40)
+list_numbers = list(numbers)
+list_numbers.append(50)
+list_numbers.remove(20)
+numbers = tuple(list_numbers)
+print(numbers)

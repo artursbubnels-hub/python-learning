@@ -1,0 +1,6 @@
+list = (10, 20, 30, 40, 50)
+length = len(list) 
+print(length)
+print(list[0])
+print(list[-1])
+print(list[2])

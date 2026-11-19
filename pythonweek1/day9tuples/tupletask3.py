@@ -1,0 +1,5 @@
+numbers = (5, 2, 8, 5, 1, 5, 9, 2)
+print(numbers.count(5))  
+print(numbers.index(8))
+print(numbers.index(2))
+print(max(numbers), min(numbers))
