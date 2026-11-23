@@ -1,0 +1,131 @@
+creating tuples
+
+numbers = (1, 2, 3, 4, 5)
+fruits = ("apple", "banana", "orange")
+empty = ()
+
+IMPORTANT: single-item tuple
+
+number = (5,)                # tuple with one item
+not_tuple = (5)              # just an integer
+
+accessing tuple elements
+
+numbers[0]                   # 1   first element
+numbers[2]                   # 3   third element
+numbers[-1]                  # 5   last element
+
+slicing tuples
+
+numbers[1:4]                 # (2, 3, 4)
+numbers[:3]                  # (1, 2, 3)
+numbers[2:]                  # (3, 4, 5)
+numbers[::-1]                # (5, 4, 3, 2, 1) reversed copy
+
+IMPORTANT: tuples are immutable
+
+You CANNOT change, add or remove elements
+
+numbers[0] = 10              # ERROR
+numbers.append(6)            # ERROR
+numbers.remove(2)            # ERROR
+
+useful functions
+
+numbers = (5, 2, 8, 1, 9)
+
+min(numbers)                 # 1   smallest
+max(numbers)                 # 9   largest
+sum(numbers)                 # 25  total
+len(numbers)                 # 5   number of items
+
+counting and finding
+
+numbers.count(5)             # how many times 5 appears
+numbers.index(8)             # index of first 8
+
+checking if an item exists
+
+3 in numbers                 # False
+5 in numbers                 # True
+10 not in numbers            # True
+
+combining tuples
+
+a = (1, 2)
+b = (3, 4)
+c = a + b                    # (1, 2, 3, 4)
+
+multiplying tuples
+
+zeros = (0,) * 5             # (0, 0, 0, 0, 0)
+
+converting list to tuple
+
+numbers = [1, 2, 3]
+t = tuple(numbers)           # (1, 2, 3)
+
+converting tuple to list
+
+t = (1, 2, 3)
+numbers = list(t)            # [1, 2, 3]
+
+unpacking: assign items to variables
+
+person = ("Artur", 18, "Python")
+name, age, language = person
+
+unpacking with *: collect remaining items
+
+numbers = (1, 2, 3, 4, 5)
+first, *middle, last = numbers
+
+first   = 1
+
+middle  = [2, 3, 4]
+
+last    = 5
+
+looping through tuples
+
+fruits = ("apple", "banana", "orange")
+
+for fruit in fruits:
+print(fruit)
+
+looping with index
+
+for index, fruit in enumerate(fruits):
+print(index, fruit)
+
+nested tuples (tuples inside tuples)
+
+matrix = (
+(1, 2, 3),
+(4, 5, 6),
+(7, 8, 9)
+)
+
+matrix[0]                    # (1, 2, 3)
+matrix[1][2]                 # 6
+matrix[2][0]                 # 7
+
+tuple assignment (reassigning the whole tuple)
+
+numbers = (1, 2, 3)
+numbers = (4, 5, 6)          # allowed: new tuple assigned
+
+swapping variables using tuples
+
+a = 10
+b = 20
+a, b = b, a                  # a = 20, b = 10
+
+tuple containing different data types
+
+person = ("Artur", 18, True, 3.14)
+
+IMPORTANT: tuple vs list
+
+my_list = [1, 2, 3]           # mutable (can be changed)
+my_tuple = (1, 2, 3)          # immutable (cannot be changed)
