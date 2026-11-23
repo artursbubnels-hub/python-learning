@@ -1,8 +1,12 @@
-student ={
-    "name" :"Artur Bubnel",
-    "age": 18,
-    "language": "Python",
-    "beginner" : True,
+shop1 = {
+    "apple": 5,
+    "banana": 3
 }
 
-print(student["name"], student["age"], student ["language"])
+shop2 = {
+    "orange": 7,
+    "grape": 4
+}
+shop3 = shop1 | shop2
+shop3["watermellon"] = 10
+print(shop3)
