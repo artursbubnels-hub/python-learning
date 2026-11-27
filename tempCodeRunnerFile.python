@@ -1,12 +1,7 @@
-shop1 = {
-    "apple": 5,
-    "banana": 3
-}
-
-shop2 = {
-    "orange": 7,
-    "grape": 4
-}
-shop3 = shop1 | shop2
-shop3["watermellon"] = 10
-print(shop3)
+def analyze_text(text: str) -> tuple[int, int, str]:
+    char_count = len(text)
+    space_count = text.count(" ")
+    uppercase_text = text.upper()
+    return char_count, space_count, uppercase_text
+chars, spaces, upper = analyze_text("Hello world!")
+print(f"Characters: {chars}, Spaces: {spaces}, Uppercase: '{upper}'")
